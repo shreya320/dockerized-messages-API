@@ -1,15 +1,16 @@
-# 📝 Notes API (Dockerized)
+# 📝 Dockerized Notes API
 
-A simple backend application built using Spring Boot and PostgreSQL, fully containerized using Docker.
+A backend application built using Spring Boot and PostgreSQL, containerized using Docker and Docker Compose.
 
 ---
 
 ## 🚀 Features
 
-* Create a note
-* Get all notes
-* Persistent storage using PostgreSQL
-* Dockerized backend + database
+* Create and retrieve notes
+* REST API using Spring Boot
+* PostgreSQL database integration
+* Fully Dockerized (multi-container setup)
+* Persistent storage using Docker volumes
 
 ---
 
@@ -21,44 +22,43 @@ A simple backend application built using Spring Boot and PostgreSQL, fully conta
 
 ---
 
+## 🏗️ Architecture
+
+* `messages-app` → Spring Boot backend
+* `postgres` → Database
+* Docker Compose connects both services
+
+---
+
 ## ⚙️ How to Run
 
-### 1. Build the project
+### 1. Build the application
 
-```bash
 mvn clean package
-```
 
 ### 2. Run using Docker
 
-```bash
 docker-compose up --build
-```
 
 ---
 
 ## 📡 API Endpoints
 
-### Create Note
-
-POST `/notes`
-
-### Get Notes
-
-GET `/notes`
+* POST `/notes` → Create note
+* GET `/notes` → Get all notes
 
 ---
 
 ## 💾 Persistence
 
 Data is stored using Docker volumes.
-Even after restarting containers, data remains intact.
+Restarting containers does NOT delete data.
 
 ---
 
-## 📌 Learning Outcome
+## 🎯 What I Learned
 
-* Dockerizing a Spring Boot application
-* Running multi-container apps using Docker Compose
-* Connecting backend with PostgreSQL in Docker
-* Handling data persistence using volumes
+* Dockerizing a backend application
+* Running multi-container systems using Docker Compose
+* Connecting services using Docker networking
+* Handling database persistence
